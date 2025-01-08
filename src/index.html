@@ -1,29 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Generador de Excusas</title>
+
     <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #a2d5f2;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 50px;
+      }
+      h2 {
+        font-family: "Pacifico", cursive;
+        color: #0288e9;
+      }
+      .card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .excusa-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #6c757d;
+      }
+      .form-control {
+        margin-bottom: 10px;
+      }
+      button {
+        font-family: "Pacifico", cursive;
+        font-size: 1.2rem;
+      }
+    </style>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card p-4">
+            <h2 class="text-center mb-4">Generador de Excusas</h2>
+
+            <form id="excusaForm">
+              <div class="form-group">
+                <label for="excusa1">Escribe tu excusa 1:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="excusa1"
+                  placeholder="Escribe tu excusa aquí"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="excusa2">Escribe tu excusa 2:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="excusa2"
+                  placeholder="Escribe tu excusa aquí"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="excusa3">Escribe tu excusa 3:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="excusa3"
+                  placeholder="Escribe tu excusa aquí"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="excusa4">Escribe tu excusa 4:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="excusa4"
+                  placeholder="Escribe tu excusa aquí"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="excusa5">Escribe tu excusa 5:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="excusa5"
+                  placeholder="Escribe tu excusa aquí"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Generar Excusa
+              </button>
+            </form>
+            <div class="mt-4 text-center">
+              <p class="excusa-text" id="excusaGenerada">
+                Haz clic en el botón para generar una excusa.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      function generarExcusa() {
+        const excusa1 = document.getElementById("excusa1").value;
+        const excusa2 = document.getElementById("excusa2").value;
+        const excusa3 = document.getElementById("excusa3").value;
+        const excusa4 = document.getElementById("excusa4").value;
+        const excusa5 = document.getElementById("excusa5").value;
+
+        const excusas = [excusa1, excusa2, excusa3, excusa4, excusa5];
+
+        const excusaAleatoria =
+          excusas[Math.floor(Math.random() * excusas.length)];
+
+        document.getElementById("excusaGenerada").textContent = excusaAleatoria;
+      }
+
+      document
+        .getElementById("excusaForm")
+        .addEventListener("submit", function(event) {
+          event.preventDefault();
+          generarExcusa();
+        });
+    </script>
   </body>
 </html>
