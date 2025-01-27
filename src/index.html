@@ -14,34 +14,6 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      body {
-        background-color: #a2d5f2;
-        font-family: "Quicksand", sans-serif;
-        margin-top: 50px;
-      }
-      h2 {
-        font-family: "Pacifico", cursive;
-        color: #0288e9;
-      }
-      .card {
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .excusa-text {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #6c757d;
-      }
-      .form-control {
-        margin-bottom: 10px;
-      }
-      button {
-        font-family: "Pacifico", cursive;
-        font-size: 1.2rem;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
@@ -118,33 +90,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-      window.onload = function() {
-        function generarExcusa() {
-          const excusa1 = document.getElementById("excusa1").value;
-          const excusa2 = document.getElementById("excusa2").value;
-          const excusa3 = document.getElementById("excusa3").value;
-          const excusa4 = document.getElementById("excusa4").value;
-          const excusa5 = document.getElementById("excusa5").value;
-
-          const excusas = [excusa1, excusa2, excusa3, excusa4, excusa5];
-
-          const excusaAleatoria =
-            excusas[Math.floor(Math.random() * excusas.length)];
-
-          document.getElementById(
-            "excusaGenerada"
-          ).textContent = excusaAleatoria;
-        }
-
-        document
-          .getElementById("excusaForm")
-          .addEventListener("submit", function(event) {
-            event.preventDefault();
-            generarExcusa();
-          });
-      };
-    </script>
   </body>
 </html>

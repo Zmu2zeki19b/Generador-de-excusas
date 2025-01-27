@@ -1,1 +1,26 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: #a2d5f2;
+  font-family: "Quicksand", sans-serif;
+  margin-top: 50px;
+}
+h2 {
+  font-family: "Pacifico", cursive;
+  color: #0288e9;
+}
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.excusa-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6c757d;
+}
+.form-control {
+  margin-bottom: 10px;
+}
+button {
+  font-family: "Pacifico", cursive;
+  font-size: 1.2rem;
+}
